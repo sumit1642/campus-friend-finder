@@ -678,14 +678,18 @@ export default function InteractiveSidebar({
 					<h2>
 						Possible friends <span className="count">{results.length}</span>
 					</h2>
-					{search.friendIds.size === 0 ?
+					{search.friendIds.size === 0 && algo !== "score" ?
+						// BFS and DFS walk friendships, so with no friends there is nothing to walk.
+						// Score ranks nearby people, so it still works without any friends.
 						<p className="empty">
 							{source?.name.split(" ")[0]} has no friends yet. Select the Connect friends tool and link them to
 							someone.
 						</p>
 					: results.length === 0 ?
 						<p className="empty">
-							No one yet. Raise the hop limit, lower the in-common filter, or press Play to step through.
+							{algo === "score" ?
+								"No one yet. Widen the search radius, lower the in-common filter, or press Play to step through."
+							:	"No one yet. Raise the hop limit, lower the in-common filter, or press Play to step through."}
 						</p>
 					:	<ul className="cards">
 							{results.map((r) => (
