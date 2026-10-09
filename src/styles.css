@@ -330,3 +330,344 @@ input[type="range"] {
 		animation: none !important;
 	}
 }
+
+/* ------------------------------------------------------------------ */
+/* Mode switch (top right, above both modes)                           */
+/* ------------------------------------------------------------------ */
+.mode-switch {
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 1100;
+	display: flex;
+	gap: 2px;
+	padding: 3px;
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.mode-switch button {
+	border: 0;
+	background: none;
+	padding: 5px 14px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--muted);
+}
+.mode-switch button[aria-pressed="true"] {
+	background: var(--indigo);
+	color: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Interactive mode                                                    */
+/* ------------------------------------------------------------------ */
+.side h3 {
+	margin: 14px 0 6px;
+	font-size: 13px;
+}
+.text {
+	padding: 7px 8px;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: #fff;
+	color: var(--ink);
+	width: 100%;
+}
+.primary {
+	background: var(--indigo);
+	color: #fff;
+	border: 0;
+	border-radius: 8px;
+	padding: 7px 12px;
+	font-weight: 600;
+}
+.primary:disabled,
+.ghost:disabled,
+.danger:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+.danger {
+	background: #b3261e;
+	color: #fff;
+	border: 0;
+	border-radius: 8px;
+	padding: 7px 10px;
+}
+.blurb {
+	margin: 8px 0;
+}
+.hint {
+	background: #fff5d6;
+	border: 1px solid #f0d98a;
+	color: #6b5200;
+	border-radius: 8px;
+	padding: 5px 10px;
+	font-size: 12.5px;
+	font-weight: 600;
+}
+.warn {
+	margin-top: 4px;
+	font-size: 12.5px;
+	color: #9a3412;
+}
+.banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	background: #fff5d6;
+	border: 1px solid #f0d98a;
+	color: #6b5200;
+	border-radius: 8px;
+	padding: 8px 10px;
+	margin: 8px 0;
+	font-size: 13px;
+}
+
+.add-form,
+.editor {
+	margin-top: 14px;
+	padding-top: 6px;
+	border-top: 1px dashed var(--line);
+}
+.chip.is-start {
+	border-color: var(--indigo);
+}
+.friend-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 0;
+	overflow: hidden;
+}
+.friend-chip button {
+	border: 0;
+	background: none;
+	padding: 3px 8px;
+	font-size: 12.5px;
+}
+.friend-chip .chip-x {
+	padding: 3px 8px 3px 4px;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1;
+}
+.friend-chip .chip-x:hover {
+	color: #b3261e;
+}
+
+.seg {
+	display: flex;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	margin: 8px 0;
+}
+.seg button {
+	flex: 1;
+	border: 0;
+	background: none;
+	padding: 7px 10px;
+	font-weight: 600;
+	color: var(--muted);
+}
+.seg button[aria-pressed="true"] {
+	background: var(--seg, var(--indigo));
+	color: #fff;
+}
+
+.stepper {
+	margin: 10px 0;
+	padding: 10px;
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+}
+.stepper .row {
+	margin: 0 0 8px;
+}
+.stepper .row > * {
+	flex: 0 1 auto;
+}
+.stepper .row > .primary {
+	min-width: 76px;
+}
+.stepper p {
+	margin-top: 6px;
+}
+
+.hop-tag {
+	color: #fff;
+	font-size: 11.5px;
+	font-weight: 600;
+	border-radius: 999px;
+	padding: 1px 8px;
+	white-space: nowrap;
+}
+.route {
+	margin-top: 4px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+/* Floating tools on the interactive map */
+.map-toolbar {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	z-index: 900;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	max-width: calc(100% - 230px);
+}
+.map-toolbar .seg {
+	margin: 0;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.map-toolbar .ghost {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.map-empty {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 800;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	max-width: 320px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 16px 18px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+	color: var(--muted);
+	pointer-events: none;
+}
+.map-empty strong {
+	color: var(--ink);
+	font-size: 15px;
+}
+.stage.is-placing .leaflet-container,
+.stage.is-placing .leaflet-interactive {
+	cursor: crosshair;
+}
+
+/* People on the map */
+.u-wrap {
+	background: none;
+	border: 0;
+}
+.u-pin {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: #c9d0da;
+	color: #334155;
+	border: 3px solid #fff;
+	box-shadow:
+		0 0 0 1.5px #9aa4b2,
+		0 2px 6px rgba(0, 0, 0, 0.3);
+	font-size: 12px;
+	transition: transform 0.15s;
+}
+.u-pin b {
+	font-weight: 700;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+}
+.u-name {
+	position: absolute;
+	left: 50%;
+	top: 33px;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	font-size: 11.5px;
+	font-weight: 600;
+	line-height: 1.35;
+	color: var(--ink);
+	background: rgba(255, 255, 255, 0.92);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	padding: 0 5px;
+	pointer-events: none;
+}
+.u-pin.is-source {
+	background: var(--indigo);
+	color: #fff;
+	box-shadow:
+		0 0 0 2.5px var(--indigo),
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.u-pin.is-friend {
+	background: #64748b;
+	color: #fff;
+	box-shadow:
+		0 0 0 1.5px #334155,
+		0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.u-pin.is-cand {
+	background: var(--c, var(--teal));
+	color: #fff;
+	box-shadow:
+		0 0 0 2.5px var(--c, var(--teal)),
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.u-pin.is-seen {
+	background: #e2e8f0;
+	color: #334155;
+	box-shadow:
+		0 0 0 1.5px #64748b,
+		0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.u-pin.is-selected {
+	transform: scale(1.14);
+	box-shadow:
+		0 0 0 3.5px var(--amber),
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.u-pin.is-linking {
+	box-shadow:
+		0 0 0 3.5px #16a34a,
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Routes: moving dashes run in the direction of travel */
+.route-flow {
+	animation: route-dash 0.9s linear infinite;
+}
+@keyframes route-dash {
+	to {
+		stroke-dashoffset: -20;
+	}
+}
+.route-arrow {
+	background: none;
+	border: 0;
+	pointer-events: none;
+}
+.route-arrow svg {
+	display: block;
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 800px) {
+	/* The mode switch sits top right, so the toolbar moves below it. */
+	.map-toolbar {
+		top: 56px;
+		max-width: calc(100% - 24px);
+	}
+}
+.map-toolbar button {
+	white-space: nowrap;
+}
