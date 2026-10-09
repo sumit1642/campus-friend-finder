@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SeededApp from "./modes/SeededApp.jsx";
 import InteractiveApp from "./modes/InteractiveApp.jsx";
+import { Analytics } from "@vercel/analytics/next";
 
 const MODE_KEY = "campus-friend-finder:mode";
 
@@ -53,7 +54,10 @@ export default function App() {
 					</button>
 				))}
 			</div>
-			{mode === "seeded" ? <SeededApp /> : <InteractiveApp />}
+			{mode === "seeded" ?
+				<SeededApp />
+			:	<InteractiveApp />}
+			<Analytics />
 		</>
 	);
 }
