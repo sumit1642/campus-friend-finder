@@ -2,7 +2,7 @@ import { useState } from "react";
 import SeededApp from "./modes/SeededApp.jsx";
 import InteractiveApp from "./modes/InteractiveApp.jsx";
 import { Analytics } from "@vercel/analytics/react";
-
+import { SpeedInsights } from "@vercel/speed-insights/react";
 const MODE_KEY = "campus-friend-finder:mode";
 
 const MODES = [
@@ -58,6 +58,7 @@ export default function App() {
 				<SeededApp />
 			:	<InteractiveApp />}
 			<Analytics />
+			<SpeedInsights />
 		</>
 	);
 }
