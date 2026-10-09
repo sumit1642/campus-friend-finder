@@ -80,3 +80,5 @@ position from `onMoveMe` in `App.jsx`. The recommender does not need to change.
 - OpenStreetMap's public tile server is fine for demos. For production traffic,
   use a tile provider or host your own tiles (see the OSM tile usage policy).
 - Real student locations are personal data: add consent and an on/off visibility toggle first.
+
+`feat/interactive-mode`
