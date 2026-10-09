@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SeededApp from "./modes/SeededApp.jsx";
 import InteractiveApp from "./modes/InteractiveApp.jsx";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const MODE_KEY = "campus-friend-finder:mode";
 
